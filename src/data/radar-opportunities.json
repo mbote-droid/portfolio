@@ -1,0 +1,240 @@
+{
+  "generated_at": "2026-07-07T23:16:13.203953+00:00",
+  "count": 6,
+  "opportunities": [
+    {
+      "theme": "Bioinformatics & ML methods — Decision Hybrid Support Analytics",
+      "output_type": "explainer",
+      "output_label": "Explainer / thought piece",
+      "suggested_title": "Bioinformatics & ML methods — Decision Hybrid Support Analytics, explained: a clinician's view",
+      "target_venues": [
+        "Substack",
+        "LinkedIn article",
+        "personal blog"
+      ],
+      "rationale": "Fits your expertise in Bioinformatics & ML methods, Clinical AI & decision support, LLMs, RAG & agents. 2 recent item(s) on this theme; suggested as a explainer / thought piece because it is a timely development worth translating for a broad audience.",
+      "expertise_areas": [
+        "Bioinformatics & ML methods",
+        "Clinical AI & decision support",
+        "LLMs, RAG & agents"
+      ],
+      "effort": 1,
+      "score": 81.53,
+      "score_breakdown": {
+        "expertise": 1.0,
+        "momentum": 0.637,
+        "evidence": 0.62,
+        "effort": 1.0
+      },
+      "outline": [
+        "What happened",
+        "Why it's a big deal",
+        "What it means for clinicians",
+        "Bottom line"
+      ],
+      "abstract": "",
+      "sources": [
+        {
+          "title": "Explainable Hybrid Deep Learning Framework for Cardiovascular Disease Prediction and Clinical Decision Support.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42411231/",
+          "source": "PubMed (AI clinical)"
+        },
+        {
+          "title": "Medi-Gemma: A Hybrid Clinical Decision Support System Integrating Deterministic EMR Analytics and Retrieval-Augmented Generation",
+          "url": "https://arxiv.org/abs/2607.04907v1",
+          "source": "arXiv (AI in medicine)"
+        }
+      ]
+    },
+    {
+      "theme": "Bioinformatics & ML methods — Graph Imaging Longitudinal Prediction",
+      "output_type": "letter_to_editor",
+      "output_label": "Letter to the editor",
+      "suggested_title": "Re: Graph Representation Learning of Longitudinal Medical Imaging Trajectories for Treatment R",
+      "target_venues": [
+        "the journal of the source paper",
+        "Cureus"
+      ],
+      "rationale": "Fits your expertise in Bioinformatics & ML methods, Clinical oncology, Clinical AI & decision support. 1 recent item(s) on this theme; suggested as a letter to the editor because it is a single high-impact paper worth a critical, timely response.",
+      "expertise_areas": [
+        "Bioinformatics & ML methods",
+        "Clinical oncology",
+        "Clinical AI & decision support"
+      ],
+      "effort": 1,
+      "score": 81.17,
+      "score_breakdown": {
+        "expertise": 1.0,
+        "momentum": 0.746,
+        "evidence": 0.44,
+        "effort": 1.0
+      },
+      "outline": [
+        "Summary of the study",
+        "Strengths",
+        "Concerns / open questions",
+        "Conclusion"
+      ],
+      "abstract": "",
+      "sources": [
+        {
+          "title": "Graph Representation Learning of Longitudinal Medical Imaging Trajectories for Treatment Response Prediction",
+          "url": "https://arxiv.org/abs/2607.04912v1",
+          "source": "arXiv (AI in medicine)"
+        }
+      ]
+    },
+    {
+      "theme": "Bioinformatics & ML methods — Graph Instrumentation Retrieval Triage",
+      "output_type": "letter_to_editor",
+      "output_label": "Letter to the editor",
+      "suggested_title": "Re: TRIAGE: Trustworthy Retrieval Instrumentation And Graph Evaluation",
+      "target_venues": [
+        "the journal of the source paper",
+        "Cureus"
+      ],
+      "rationale": "Fits your expertise in Bioinformatics & ML methods, Clinical AI & decision support, LLMs, RAG & agents. 1 recent item(s) on this theme; suggested as a letter to the editor because it is a single high-impact paper worth a critical, timely response.",
+      "expertise_areas": [
+        "Bioinformatics & ML methods",
+        "Clinical AI & decision support",
+        "LLMs, RAG & agents"
+      ],
+      "effort": 1,
+      "score": 78.2,
+      "score_breakdown": {
+        "expertise": 1.0,
+        "momentum": 0.646,
+        "evidence": 0.44,
+        "effort": 1.0
+      },
+      "outline": [
+        "Summary of the study",
+        "Strengths",
+        "Concerns / open questions",
+        "Conclusion"
+      ],
+      "abstract": "",
+      "sources": [
+        {
+          "title": "TRIAGE: Trustworthy Retrieval Instrumentation And Graph Evaluation",
+          "url": "https://arxiv.org/abs/2607.03447v1",
+          "source": "arXiv (AI in medicine)"
+        }
+      ]
+    },
+    {
+      "theme": "LLMs, RAG & agents — Brain Hypergraphs Multi Scale Network",
+      "output_type": "letter_to_editor",
+      "output_label": "Letter to the editor",
+      "suggested_title": "Re: SABER: A Semantic-Aligned Brain Network Analysis Framework via Multi-scale Hypergraphs",
+      "target_venues": [
+        "the journal of the source paper",
+        "Cureus"
+      ],
+      "rationale": "Fits your expertise in LLMs, RAG & agents, Bioinformatics & ML methods, Clinical AI & decision support. 1 recent item(s) on this theme; suggested as a letter to the editor because it is a single high-impact paper worth a critical, timely response.",
+      "expertise_areas": [
+        "LLMs, RAG & agents",
+        "Bioinformatics & ML methods",
+        "Clinical AI & decision support"
+      ],
+      "effort": 1,
+      "score": 76.8,
+      "score_breakdown": {
+        "expertise": 1.0,
+        "momentum": 0.6,
+        "evidence": 0.44,
+        "effort": 1.0
+      },
+      "outline": [
+        "Summary of the study",
+        "Strengths",
+        "Concerns / open questions",
+        "Conclusion"
+      ],
+      "abstract": "",
+      "sources": [
+        {
+          "title": "SABER: A Semantic-Aligned Brain Network Analysis Framework via Multi-scale Hypergraphs",
+          "url": "https://arxiv.org/abs/2607.01901v1",
+          "source": "arXiv (ML in healthcare)"
+        }
+      ]
+    },
+    {
+      "theme": "Clinical AI & decision support — Automation Enrollment Equity Matching",
+      "output_type": "letter_to_editor",
+      "output_label": "Letter to the editor",
+      "suggested_title": "Re: Equity and Automation in Clinical Trial Screening: Risks and Responsibilities of Artificia",
+      "target_venues": [
+        "the journal of the source paper",
+        "Cureus"
+      ],
+      "rationale": "Fits your expertise in Clinical AI & decision support, Clinical oncology, Global health & Africa. 1 recent item(s) on this theme; suggested as a letter to the editor because it is a single high-impact paper worth a critical, timely response.",
+      "expertise_areas": [
+        "Clinical AI & decision support",
+        "Clinical oncology",
+        "Global health & Africa"
+      ],
+      "effort": 1,
+      "score": 76.53,
+      "score_breakdown": {
+        "expertise": 1.0,
+        "momentum": 0.351,
+        "evidence": 0.8,
+        "effort": 1.0
+      },
+      "outline": [
+        "Summary of the study",
+        "Strengths",
+        "Concerns / open questions",
+        "Conclusion"
+      ],
+      "abstract": "",
+      "sources": [
+        {
+          "title": "Equity and Automation in Clinical Trial Screening: Risks and Responsibilities of Artificial Intelligence‑Enabled Matching and Enrollment Systems.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42413065/",
+          "source": "PubMed (AI clinical)"
+        }
+      ]
+    },
+    {
+      "theme": "Bioinformatics & ML methods — Ability Agent Benchmarking Evoagentbench",
+      "output_type": "letter_to_editor",
+      "output_label": "Letter to the editor",
+      "suggested_title": "Re: EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer",
+      "target_venues": [
+        "the journal of the source paper",
+        "Cureus"
+      ],
+      "rationale": "Fits your expertise in Bioinformatics & ML methods, LLMs, RAG & agents, Clinical AI & decision support. 1 recent item(s) on this theme; suggested as a letter to the editor because it is a single high-impact paper worth a critical, timely response.",
+      "expertise_areas": [
+        "Bioinformatics & ML methods",
+        "LLMs, RAG & agents",
+        "Clinical AI & decision support"
+      ],
+      "effort": 1,
+      "score": 75.38,
+      "score_breakdown": {
+        "expertise": 1.0,
+        "momentum": 0.552,
+        "evidence": 0.44,
+        "effort": 1.0
+      },
+      "outline": [
+        "Summary of the study",
+        "Strengths",
+        "Concerns / open questions",
+        "Conclusion"
+      ],
+      "abstract": "",
+      "sources": [
+        {
+          "title": "EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer",
+          "url": "https://arxiv.org/abs/2607.05202v1",
+          "source": "arXiv (AI in medicine)"
+        }
+      ]
+    }
+  ]
+}
