@@ -1,28 +1,36 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------- *
- * Design tokens. Clean, credible light base; the Radar page opts
- * into a dark, bolder treatment via .radar-dark.
+ * Design tokens. Clean, credible light base with a teal→cyan→indigo
+ * accent system for depth. The Radar page opts into a dark treatment
+ * via .radar-dark.
  * ---------------------------------------------------------------- */
 :root {
   --background: #ffffff;
-  --foreground: #0f172a;      /* slate-900 */
-  --muted: #64748b;           /* slate-500 */
-  --border: #e2e8f0;          /* slate-200 */
-  --card: #f8fafc;            /* slate-50  */
+  --surface: #f8fafc;         /* slate-50  */
+  --foreground: #0b1220;      /* near slate-950 */
+  --muted: #57647b;           /* slate-500/600 */
+  --border: #e5e9f0;          /* slate-200 */
+  --card: #ffffff;
   --accent: #0d9488;          /* teal-600  */
   --accent-strong: #0f766e;   /* teal-700  */
+  --accent-2: #0891b2;        /* cyan-600  */
+  --accent-3: #4f46e5;        /* indigo-600 */
   --accent-contrast: #ffffff;
+  --ring: rgba(13, 148, 136, 0.35);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-card: var(--card);
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -32,6 +40,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* Smooth in-page anchor scrolling for the single-page nav. */
@@ -40,7 +49,99 @@ html {
 }
 
 /* ---------------------------------------------------------------- *
- * Animation utilities (used sparingly on the base, freely on Radar)
+ * Reusable presentation utilities
+ * ---------------------------------------------------------------- */
+
+/* Gradient text for key accents. */
+.text-gradient {
+  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 45%, var(--accent-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Soft aurora glow used behind the hero. */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.aurora::before,
+.aurora::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.5;
+}
+.aurora::before {
+  width: 42rem;
+  height: 42rem;
+  top: -14rem;
+  right: -10rem;
+  background: radial-gradient(circle at center, rgba(34, 211, 238, 0.35), transparent 62%);
+}
+.aurora::after {
+  width: 36rem;
+  height: 36rem;
+  top: -8rem;
+  left: -12rem;
+  background: radial-gradient(circle at center, rgba(79, 70, 229, 0.22), transparent 62%);
+}
+
+/* Subtle dotted texture. */
+.dotted {
+  background-image: radial-gradient(rgba(13, 148, 136, 0.10) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Primary + secondary buttons. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.625rem 1.15rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: var(--accent-contrast);
+  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+  box-shadow: 0 8px 24px -10px var(--ring);
+}
+.btn-primary:hover { box-shadow: 0 12px 30px -8px var(--ring); }
+.btn-ghost {
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent-strong); }
+
+/* Chip. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  line-height: 1;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--foreground);
+}
+.chip-learning {
+  border-style: dashed;
+  color: var(--muted);
+  background: transparent;
+}
+
+/* ---------------------------------------------------------------- *
+ * Animation utilities
  * ---------------------------------------------------------------- */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(16px); }
@@ -50,13 +151,13 @@ html {
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
 }
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.55; }
-  50%      { opacity: 1; }
-}
 @keyframes grid-drift {
   from { background-position: 0 0; }
   to   { background-position: 44px 44px; }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
 }
 
 .animate-fade-up {
@@ -66,12 +167,16 @@ html {
   transform-origin: left;
   animation: grow-x 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
 
 /* Respect reduced-motion preferences. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .animate-fade-up,
-  .animate-grow-x { animation: none; }
+  .animate-grow-x,
+  .animate-float { animation: none; }
 }
 
 /* ---------------------------------------------------------------- *
