@@ -55,17 +55,17 @@ export default function OpengraphImage() {
           <div style={{ fontSize: "84px", fontWeight: 800, letterSpacing: "-2px" }}>
             {site.name}
           </div>
-          <div style={{ fontSize: "40px", color: "#22d3ee", fontWeight: 600 }}>
-            Physician-Scientist · AI / Software Engineer
+          <div style={{ fontSize: "37px", color: "#22d3ee", fontWeight: 600 }}>
+            Physician-Scientist · Full-Stack SWE · IBM AI Engineer
           </div>
-          <div style={{ fontSize: "30px", color: "#a9b6cc", maxWidth: "980px" }}>
-            Trustworthy, clinical-grade AI for genomics &amp; healthcare — multi-agent
-            LLM systems, variant interpretation, and anti-hallucination guardrails.
+          <div style={{ fontSize: "29px", color: "#a9b6cc", maxWidth: "1000px" }}>
+            Data science, annotation &amp; biomedical research — turning biomedical
+            data into trustworthy, clinical-grade AI, end to end.
           </div>
         </div>
 
         <div style={{ display: "flex", gap: "16px" }}>
-          {["Bioinformatics", "Healthcare AI", "LLM Engineering", "Genomics"].map(
+          {["Data Science", "Data Annotation", "Biomedical Research", "Healthcare AI"].map(
             (t) => (
               <div
                 key={t}

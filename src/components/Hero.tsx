@@ -2,10 +2,11 @@ import { site, stats } from "@/data/content";
 import { Avatar } from "./Avatar";
 
 const credentials = [
-  "MBChB · Physician",
-  "IBM-Certified AI Developer",
-  "Bioinformatics",
-  "LLM / Multi-agent systems",
+  "MBChB · Physician-Scientist",
+  "IBM-Certified AI Engineer",
+  "Certified Full-Stack SWE",
+  "Data Science & Annotation",
+  "Biomedical Research",
 ];
 
 export function Hero() {

@@ -28,13 +28,25 @@ export function About() {
                 <span aria-hidden className="text-accent">
                   ▸
                 </span>
-                IBM-Certified AI Developer
+                IBM-Certified AI Engineer
               </li>
               <li className="flex gap-2">
                 <span aria-hidden className="text-accent">
                   ▸
                 </span>
-                Clinical-grade, offline-first engineering
+                Certified Full-Stack Software Engineer
+              </li>
+              <li className="flex gap-2">
+                <span aria-hidden className="text-accent">
+                  ▸
+                </span>
+                Data science, analysis &amp; multi-domain annotation
+              </li>
+              <li className="flex gap-2">
+                <span aria-hidden className="text-accent">
+                  ▸
+                </span>
+                Biomedical research: study design &amp; evidence synthesis
               </li>
               <li className="flex gap-2">
                 <span aria-hidden className="text-accent">

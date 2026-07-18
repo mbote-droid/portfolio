@@ -23,28 +23,35 @@ export type Stat = { value: string; label: string };
 
 export type SkillGroup = { label: string; items: string[]; learning?: boolean };
 
+export type Focus = { title: string; blurb: string; tags: string[] };
+
 export const site = {
   name: "Samuel Mbote",
   fullName: "Dr Samuel Ngigi Mbote",
   shortName: "Samuel Mbote",
-  role: "Physician-Scientist · AI / Software Engineer",
+  role: "Physician-Scientist · Full-Stack Software Engineer · AI Engineer",
+
+  // Concise title-tag / social positioning.
+  title: "Physician-Scientist · Certified Full-Stack SWE · IBM AI Engineer",
 
   // Search-friendly headline used for SEO + the hero value proposition.
-  headline: "Physician-scientist engineering trustworthy AI for genomics and healthcare.",
+  headline:
+    "Physician-scientist and full-stack AI engineer turning biomedical data into decisions you can trust.",
 
   tagline:
-    "I build and audit clinical-grade AI systems — genomics, variant interpretation, and drug–target modelling — with hallucination guardrails and rigorous, offline-first engineering.",
+    "I unite frontline clinical medicine, biomedical research and production engineering — building data-driven, clinical-grade AI across genomics, healthcare and the full stack, with the rigour to make its reasoning verifiable.",
 
   // Short, keyword-dense summary for meta description + social cards.
   metaDescription:
-    "Samuel Mbote — physician-scientist and AI/software engineer building trustworthy, clinical-grade AI for bioinformatics, genomics and healthcare. Multi-agent LLM systems, variant interpretation, structural biology, and anti-hallucination guardrails, rigorously tested and offline-first.",
+    "Samuel Mbote — physician-scientist, IBM-certified AI engineer and certified full-stack software engineer. Data science, data analysis and multi-domain data annotation (audio, image, clinical text); biomedical & clinical research (study design, biostatistics, evidence synthesis); genomics, variant interpretation and trustworthy, offline-first healthcare AI.",
 
   email: "mbotesamuel9@gmail.com",
-  availability: "Open to bioinformatics, health-tech & applied-AI roles",
+  availability:
+    "Open to roles in data science & annotation, bioinformatics, biomedical research, health-tech & applied AI",
 
   bio: [
-    "I'm a physician-scientist (MBChB, COSECSA surgical training) and IBM-certified AI developer. I sit at the intersection of clinical medicine and machine learning, building systems that reason over biochemistry — protein structure and folding, variant effect, and drug–target interaction — and that can be trusted in a clinical context.",
-    "My focus is making AI's scientific reasoning verifiable: hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (480+ automated tests across projects). I pair native molecular- and clinical-biology knowledge with the engineering discipline to ship software that is honest, reproducible, and genuinely useful.",
+    "I'm a physician-scientist (MBChB, COSECSA surgical training), an IBM-certified AI engineer and a certified full-stack software engineer — a rare combination of frontline clinical judgement, biomedical research training and the engineering depth to ship production systems end to end. I work fluently across the whole pipeline: framing the research question, designing the study, wrangling and annotating the data, modelling it, and delivering it as a tested, deployable product.",
+    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (480+ automated tests across projects) — so the results hold up to clinical and scientific scrutiny.",
   ],
 
   links: {
@@ -59,10 +66,70 @@ export const site = {
 
 /** Headline impact metrics — shown above the fold so strengths are visible immediately. */
 export const stats: Stat[] = [
-  { value: "6", label: "Shipped projects" },
-  { value: "480+", label: "Automated tests" },
-  { value: "26", label: "Agent flagship platform" },
+  { value: "3-in-1", label: "Clinician · Researcher · Engineer" },
+  { value: "6+", label: "Shipped, tested products" },
+  { value: "480+", label: "Automated tests written" },
   { value: "100%", label: "Pathogenic-variant F1" },
+];
+
+/**
+ * Core capability areas — the "Data & Research" section. Makes the data-science,
+ * data-annotation and biomedical-research strengths impossible to miss for
+ * recruiters scanning for those specific roles.
+ */
+export const focus: Focus[] = [
+  {
+    title: "Data Science & Machine Learning",
+    blurb:
+      "End-to-end data science: exploratory analysis, statistical and ML modelling, feature engineering, and honest evaluation. I turn messy, high-dimensional biomedical data into models whose performance I can defend — measured against ground truth, not vibes.",
+    tags: [
+      "EDA",
+      "Statistical modelling",
+      "ML / classification",
+      "Feature engineering",
+      "Model evaluation (F1 · ROC · calibration)",
+      "pandas · NumPy · scikit-learn",
+    ],
+  },
+  {
+    title: "Data Analysis & Analytics",
+    blurb:
+      "I interrogate data to answer real questions: hypothesis testing, biostatistics, cohort and outcome analysis, and clear, decision-ready visualisation. Comfortable from raw SQL and spreadsheets to reproducible analytical pipelines.",
+    tags: [
+      "Biostatistics",
+      "Hypothesis testing",
+      "Cohort & outcome analysis",
+      "Data visualisation",
+      "SQL",
+      "Reproducible pipelines",
+    ],
+  },
+  {
+    title: "Data Annotation & Labeling",
+    blurb:
+      "Multi-domain annotation with a clinician's eye for quality. I design labelling schemas and rubrics, run annotation across audio, image and clinical-text modalities, and enforce quality with inter-annotator agreement and model-in-the-loop review.",
+    tags: [
+      "Audio annotation & transcription QA",
+      "Medical image annotation (radiology · pathology · surgical)",
+      "Clinical & genomic text labeling",
+      "Rubric & schema design",
+      "Inter-annotator agreement",
+      "Model-in-the-loop QA",
+    ],
+  },
+  {
+    title: "Healthcare & Biomedical Research",
+    blurb:
+      "Trained to do research properly. I scope questions, choose the right study design, and reason from evidence — grounding every AI system in verifiable biomedical fact rather than plausible-sounding output.",
+    tags: [
+      "Study design (RCT · cohort · case-control · cross-sectional)",
+      "Systematic review & evidence synthesis",
+      "Experimental design & hypothesis-driven research",
+      "Clinical & molecular biology",
+      "Ground-truth benchmarking (ClinVar · IARC)",
+      "Scientific writing",
+    ],
+  },
 ];
 
 /**
@@ -71,8 +138,41 @@ export const stats: Stat[] = [
  */
 export const skills: SkillGroup[] = [
   {
-    label: "Languages",
-    items: ["Python", "TypeScript / JavaScript", "SQL", "Bash"],
+    label: "Data science & analytics",
+    items: [
+      "Exploratory data analysis (EDA)",
+      "Statistical modelling",
+      "Biostatistics & hypothesis testing",
+      "Machine learning / classification",
+      "Feature engineering",
+      "Model evaluation (F1 · ROC · calibration)",
+      "Data visualisation",
+      "pandas · NumPy · scikit-learn",
+      "SQL",
+    ],
+  },
+  {
+    label: "Data annotation & labeling",
+    items: [
+      "Audio annotation & transcription QA",
+      "Medical image annotation",
+      "Clinical & genomic text labeling",
+      "Rubric & schema design",
+      "Inter-annotator agreement",
+      "Model-in-the-loop QA",
+      "Quality control",
+    ],
+  },
+  {
+    label: "Biomedical & clinical research",
+    items: [
+      "Study design (RCT · cohort · case-control)",
+      "Systematic review & evidence synthesis",
+      "Experimental design",
+      "Clinical & molecular biology",
+      "Ground-truth benchmarking",
+      "Scientific writing",
+    ],
   },
   {
     label: "AI / ML engineering",
@@ -101,12 +201,20 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    label: "Backend & data",
-    items: ["FastAPI", "Streamlit", "REST APIs", "pandas / NumPy", "Docker", "pytest / TDD"],
-  },
-  {
-    label: "Frontend & delivery",
-    items: ["React", "Next.js", "Tailwind CSS", "Git", "GitHub Actions (CI/CD)"],
+    label: "Full-stack engineering",
+    items: [
+      "Python",
+      "TypeScript / JavaScript",
+      "React",
+      "Next.js",
+      "FastAPI",
+      "Streamlit",
+      "REST APIs",
+      "Tailwind CSS",
+      "Docker",
+      "Git · GitHub Actions (CI/CD)",
+      "pytest / TDD",
+    ],
   },
   {
     label: "Currently building & learning",
