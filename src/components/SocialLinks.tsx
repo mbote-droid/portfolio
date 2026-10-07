@@ -9,6 +9,9 @@ export function SocialLinks({ variant = "light" }: { variant?: "light" | "dark" 
     { key: "github", label: "GitHub", href: site.links.github },
     { key: "linkedin", label: "LinkedIn", href: site.links.linkedin },
     { key: "orcid", label: "ORCID", href: site.links.orcid },
+    { key: "scholar", label: "Google Scholar", href: site.links.scholar },
+    { key: "credly", label: "Credly badges", href: site.links.credly },
+    { key: "kolabtree", label: "Kolabtree", href: site.links.kolabtree },
     { key: "email", label: "Email", href: site.links.email },
     { key: "cv", label: "CV / Résumé", href: site.links.cv },
   ];

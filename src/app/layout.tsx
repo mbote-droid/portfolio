@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { site } from "@/data/content";
+import { site, projects, education, certifications } from "@/data/content";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,7 +25,15 @@ export const metadata: Metadata = {
   creator: site.fullName,
   keywords: [
     "Samuel Mbote",
-    "physician-scientist",
+    "Dr. Samuel Mbote",
+    "physician",
+    "general surgeon",
+    "COSECSA",
+    "Snakemake",
+    "LLM evaluation",
+    "AI agent evaluation",
+    "precision oncology",
+    "TP53",
     "data scientist",
     "data analyst",
     "data annotation",
@@ -99,11 +107,23 @@ function PersonJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: site.fullName,
-    alternateName: site.name,
+    alternateName: site.alternateNames,
+    honorificPrefix: "Dr.",
+    honorificSuffix: "MBChB, MCS",
+    worksFor: { "@type": "Organization", name: "Daktari Genomed Labs" },
+    alumniOf: education.map((e) => ({ "@type": "CollegeOrUniversity", name: e.issuer })),
+    hasCredential: [...education, ...certifications]
+      .filter((c) => !c.note)
+      .map((c) => ({
+        "@type": "EducationalOccupationalCredential",
+        name: c.name,
+        recognizedBy: { "@type": "Organization", name: c.issuer },
+      })),
     url: site.links.url,
     email: site.email,
     jobTitle: [
-      "Physician-Scientist",
+      "Physician",
+      "Bioinformatics Engineer",
       "Data Scientist",
       "IBM-Certified AI Engineer",
       "Certified Full-Stack Software Engineer",
@@ -129,14 +149,40 @@ function PersonJsonLd() {
       "Retrieval-augmented generation",
       "Multi-agent systems",
       "Full-stack software engineering",
+      "Next-generation sequencing",
+      "Variant calling",
+      "Nextflow",
+      "Snakemake",
+      "Precision oncology",
+      "LLM evaluation",
+      "AI agent evaluation",
+      "Scientific writing",
+      "Surgery",
     ],
-    sameAs: [site.links.github, site.links.linkedin, site.links.orcid],
+    sameAs: [
+      site.links.github,
+      site.links.linkedin,
+      site.links.orcid,
+      site.links.credly,
+      site.links.scholar,
+      site.links.kolabtree,
+    ].filter(Boolean),
   };
+  const code = projects.map((pr) => ({
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: pr.title,
+    description: pr.description,
+    codeRepository: pr.links.find((l) => l.href.includes("github.com"))?.href,
+    programmingLanguage: pr.tech,
+    license: "https://opensource.org/licenses/MIT",
+    author: { "@type": "Person", name: site.fullName, url: site.links.url },
+  }));
   return (
     <script
       type="application/ld+json"
       // JSON.stringify output is safe: no user input, all first-party constants.
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify([json, ...code]) }}
     />
   );
 }

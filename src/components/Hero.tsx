@@ -2,7 +2,7 @@ import { site, stats } from "@/data/content";
 import { Avatar } from "./Avatar";
 
 const credentials = [
-  "MBChB · Physician-Scientist",
+  "MBChB · MCS (COSECSA)",
   "IBM-Certified AI Engineer",
   "Certified Full-Stack SWE",
   "Data Science & Annotation",

@@ -1,0 +1,29 @@
+# Dr. Samuel Mbote
+
+> Physician (MBChB, Kampala International University; MCS, COSECSA general surgery) and AI/software engineer. IBM-certified AI engineer and full-stack software developer. Works on bioinformatics and NGS pipelines, clinical genomics, LLM and AI-agent evaluation, and trustworthy healthcare AI for low-resource settings. Founder, Daktari Genomed Labs. Open to remote roles and contracts in bioinformatics, AI evaluation, data science and annotation, biomedical research and scientific writing.
+
+## Projects (all MIT-licensed, on GitHub)
+
+- [NGS Variant Pipeline](https://github.com/mbote-droid/ngs-variant-pipeline): Nextflow pipeline from raw reads to an evidence-cited clinical variant report. Germline, somatic (Mutect2), cohort joint genotyping and long-read (minimap2, Clair3, Sniffles2); GIAB accuracy benchmarking; HL7 FHIR output; 164 tests.
+- [Precision Onco Africa](https://github.com/mbote-droid/precision-onco-africa): offline-capable multi-agent LLM platform for TP53 variant interpretation. 26 specialist agents including a 6-agent tumour board, an AI reasoning-audit layer (hallucination, citation quality), ClinVar/IARC benchmark (7/7 known pathogenic hotspots correct), runs on 8 GB RAM; 566 tests.
+- [NeuroSonix](https://github.com/mbote-droid/Neurosonix): audio annotation and multi-agent evaluation of voice-agent conversations across five quality dimensions; FastAPI + React; 133 tests.
+- [Healthcare AI Radar](https://github.com/mbote-droid/healthcare-ai-radar): healthcare-AI literature intelligence with a transparent 0-100 Scoop Score and a five-layer anti-hallucination guardrail; 90 tests.
+- [TP53 Bioinformatics Pipeline](https://github.com/mbote-droid/tp53_analysis): sequence retrieval, ORF discovery, phylogenetics, InterPro domain annotation and a cancer-mutation heatmap; 63 tests.
+
+## Skills
+
+Python, TypeScript, SQL, Bash; Nextflow, Snakemake, BioPython, variant calling, GIAB benchmarking; LLM applications, RAG, multi-agent systems, AI evaluation, Keras; FastAPI, Django, Node.js, React, Next.js; Docker, Kubernetes, GitHub Actions, Google Cloud, IBM Cloud; MATLAB/Octave; data annotation (audio, medical image, clinical text); study design, biostatistics, evidence synthesis, scientific writing.
+
+## Profiles
+
+- Portfolio: https://portfolio-sam-mbote.vercel.app
+- GitHub: https://github.com/mbote-droid
+- ORCID: https://orcid.org/0009-0003-2319-8873
+- Google Scholar: https://scholar.google.com/citations?user=3iiXDTYAAAAJ
+- LinkedIn: https://www.linkedin.com/in/samuel-mbote-238b13230
+- Credly: https://www.credly.com/users/samuel-m.1cfdf6c1
+
+## Certifications
+
+IBM AI Engineering and IBM Full Stack Software Developer professional certificates; Bioinformatics (DTU; UC San Diego); Computational Neuroscience (University of Washington); Foundations of Healthcare Systems Engineering (Johns Hopkins); Biomedical Imaging Fundamentals (EPFL); Annotate and Analyze Objects for Vision; Microsoft AI Agents; Microsoft AI in Healthcare (Azure).
+- Email: mbotesamuel9@gmail.com

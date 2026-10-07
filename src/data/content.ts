@@ -16,7 +16,7 @@ export type Project = {
   tech: string[];
   links: ProjectLink[];
   flagship?: boolean;
-  status?: "live" | "coming-soon";
+  status?: "live" | "open-source" | "coming-soon";
 };
 
 export type Stat = { value: string; label: string };
@@ -25,33 +25,36 @@ export type SkillGroup = { label: string; items: string[]; learning?: boolean };
 
 export type Focus = { title: string; blurb: string; tags: string[] };
 
+export type Credential = { name: string; issuer: string; note?: string; href?: string };
+
 export const site = {
   name: "Samuel Mbote",
-  fullName: "Dr Samuel Ngigi Mbote",
+  fullName: "Dr. Samuel Mbote",
+  alternateNames: ["Samuel Ngigi Mbote", "Samuel N. Mbote", "Dr. Samuel Mbote"],
   shortName: "Samuel Mbote",
-  role: "Physician-Scientist · Full-Stack Software Engineer · AI Engineer",
+  role: "Physician (MBChB, MCS) · AI & Software Engineer · Bioinformatics",
 
   // Concise title-tag / social positioning.
-  title: "Physician-Scientist · Certified Full-Stack SWE · IBM AI Engineer",
+  title: "Physician · IBM-Certified AI Engineer · Full-Stack SWE · Bioinformatics",
 
   // Search-friendly headline used for SEO + the hero value proposition.
   headline:
-    "Physician-scientist and full-stack AI engineer turning biomedical data into decisions you can trust.",
+    "Physician and AI engineer turning biomedical data into decisions you can trust.",
 
   tagline:
-    "I unite frontline clinical medicine, biomedical research and production engineering — building data-driven, clinical-grade AI across genomics, healthcare and the full stack, with the rigour to make its reasoning verifiable.",
+    "I unite frontline clinical medicine, biomedical research and production engineering — building data-driven, rigorously tested AI across genomics, healthcare and the full stack, with the rigour to make its reasoning verifiable.",
 
   // Short, keyword-dense summary for meta description + social cards.
   metaDescription:
-    "Samuel Mbote — physician-scientist, IBM-certified AI engineer and certified full-stack software engineer. Data science, data analysis and multi-domain data annotation (audio, image, clinical text); biomedical & clinical research (study design, biostatistics, evidence synthesis); genomics, variant interpretation and trustworthy, offline-first healthcare AI.",
+    "Dr. Samuel Mbote: physician (MBChB, MCS COSECSA), IBM-certified AI engineer and full-stack software engineer. Bioinformatics and NGS pipelines (Nextflow, Snakemake), clinical genomics and variant interpretation, LLM and AI-agent evaluation, data science and multi-domain data annotation (audio, image, clinical text), biomedical research and scientific writing.",
 
   email: "mbotesamuel9@gmail.com",
   availability:
-    "Open to roles in data science & annotation, bioinformatics, biomedical research, health-tech & applied AI",
+    "Open to roles in bioinformatics, AI evaluation, data science & annotation, biomedical research, scientific writing, health-tech & applied AI",
 
   bio: [
-    "I'm a physician-scientist (MBChB, COSECSA surgical training), an IBM-certified AI engineer and a certified full-stack software engineer — a rare combination of frontline clinical judgement, biomedical research training and the engineering depth to ship production systems end to end. I work fluently across the whole pipeline: framing the research question, designing the study, wrangling and annotating the data, modelling it, and delivering it as a tested, deployable product.",
-    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (480+ automated tests across projects) — so the results hold up to clinical and scientific scrutiny.",
+    "I'm a physician and general surgery registrar (MBChB; MCS, COSECSA), an IBM-certified AI engineer and an IBM-certified full-stack software engineer — a rare combination of frontline clinical judgement, biomedical research training and the engineering depth to ship production systems end to end. I work fluently across the whole pipeline: framing the research question, designing the study, wrangling and annotating the data, modelling it, and delivering it as a tested, deployable product.",
+    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (1,000+ automated tests across five open-source projects) — so the results hold up to clinical and scientific scrutiny.",
   ],
 
   links: {
@@ -60,6 +63,9 @@ export const site = {
     orcid: "https://orcid.org/0009-0003-2319-8873",
     email: "mailto:mbotesamuel9@gmail.com",
     cv: "/cv.pdf",
+    credly: "https://www.credly.com/users/samuel-m.1cfdf6c1",
+    scholar: "https://scholar.google.com/citations?user=3iiXDTYAAAAJ",
+    kolabtree: "",
     url: "https://portfolio-sam-mbote.vercel.app",
   },
 };
@@ -67,9 +73,9 @@ export const site = {
 /** Headline impact metrics — shown above the fold so strengths are visible immediately. */
 export const stats: Stat[] = [
   { value: "3-in-1", label: "Clinician · Researcher · Engineer" },
-  { value: "6+", label: "Shipped, tested products" },
-  { value: "480+", label: "Automated tests written" },
-  { value: "100%", label: "Pathogenic-variant F1" },
+  { value: "5", label: "Tested open-source projects" },
+  { value: "1,000+", label: "Automated tests written" },
+  { value: "7/7", label: "TP53 pathogenic hotspots correct vs ClinVar/IARC" },
 ];
 
 /**
@@ -184,6 +190,9 @@ export const skills: SkillGroup[] = [
       "Model evaluation & benchmarking",
       "Prompt engineering",
       "Gemini & OpenAI APIs",
+      "LLM & AI-agent evaluation",
+      "Deep learning (Keras)",
+      "Generative AI applications",
     ],
   },
   {
@@ -195,6 +204,10 @@ export const skills: SkillGroup[] = [
       "InterPro / domain annotation",
       "Phylogenetics",
       "ClinVar / IARC benchmarking",
+      "NGS variant calling (germline · somatic · long-read)",
+      "Nextflow · Snakemake",
+      "Mutect2 · Clair3 · Sniffles2 · minimap2",
+      "GIAB benchmarking · MultiQC",
       "AlphaFold & ESM-2",
       "AutoDock Vina",
       "HL7 FHIR R4",
@@ -208,18 +221,24 @@ export const skills: SkillGroup[] = [
       "React",
       "Next.js",
       "FastAPI",
+      "Django",
+      "Node.js · Express",
       "Streamlit",
       "REST APIs",
       "Tailwind CSS",
-      "Docker",
+      "Docker · Kubernetes",
+      "Microservices & serverless",
       "Git · GitHub Actions (CI/CD)",
+      "Google Cloud · IBM Cloud",
+      "GPU compute (CUDA · AMD ROCm)",
+      "MATLAB · Octave",
       "pytest / TDD",
     ],
   },
   {
     label: "Currently building & learning",
     learning: true,
-    items: ["Rust", "Nextflow", "Snakemake", "Cloud (AWS / GCP)"],
+    items: ["Rust", "AWS", "Azure"],
   },
 ];
 
@@ -228,14 +247,14 @@ export const projects: Project[] = [
     slug: "precision-onco-africa",
     title: "Precision Onco Africa",
     tagline:
-      "A 26-agent structural & molecular-genetics AI platform with a built-in reasoning-audit layer",
+      "26 specialist AI agents, including a 6-agent tumour board, with a built-in reasoning-audit layer",
     description:
-      "A clinical-grade platform that reasons over cancer biochemistry — protein structure and folding, variant effect, and drug–target interaction — with an AI-audit layer that scores every agent's output for accuracy, hallucination and citation quality before release. Runs fully offline on 8GB RAM.",
+      "A research platform that reasons over cancer biochemistry — protein structure and folding, variant effect, and drug–target interaction — with an AI-audit layer that scores every agent's output for accuracy, hallucination and citation quality before release. Runs fully offline on 8GB RAM.",
     highlights: [
       "Structural biology: AlphaFold p53 structures (per-residue pLDDT), ESM-2 variant-effect scoring, ΔΔG stability, cavity/druggability",
       "Drug–target modelling: AutoDock Vina docking, MDM2 / APR-246 inhibitor scoring, PARP synthetic-lethality mapping",
       "AI-reasoning audit: dual guardrail + per-agent harness scoring accuracy, hallucination rate and citation quality",
-      "Ground-truth benchmarks vs ClinVar/IARC (100% pathogenic-variant F1); 419 tests; HIPAA-aligned, HL7 FHIR R4",
+      "Benchmarked vs ClinVar/IARC: 7/7 known pathogenic TP53 hotspots correctly classified; 566 tests; PHI de-identification; HL7 FHIR R4 output",
     ],
     tech: ["Python", "AlphaFold", "ESM-2", "AutoDock Vina", "Docker", "LLM agents"],
     links: [
@@ -253,18 +272,18 @@ export const projects: Project[] = [
     slug: "ngs-variant-pipeline",
     title: "NGS Variant Pipeline",
     tagline:
-      "Raw sequencing reads → AI-generated, evidence-cited clinical variant report — laptop to cloud",
+      "Raw sequencing reads to an evidence-cited clinical variant report: germline, somatic and long-read, laptop to cloud",
     description:
-      "A reproducible Nextflow pipeline that turns raw NGS reads into an AI-generated, evidence-cited clinical variant report for both germline and somatic workflows. Built for reproducibility and portability, so the same pipeline runs on a laptop or scales to the cloud.",
+      "A reproducible, containerised Nextflow pipeline: reads, QC, alignment, variant calling, annotation, prioritisation and an AI-assisted, evidence-cited report, with a single MultiQC across every stage. The same pipeline runs on a laptop or scales to cloud/HPC.",
     highlights: [
-      "End-to-end germline & somatic variant calling from raw reads",
-      "AI-generated clinical report with cited, verifiable evidence",
-      "Reproducible, containerised Nextflow workflow (laptop → cloud)",
-      "Designed around ground-truth benchmarking and honest reporting",
+      "Short-read germline, somatic (Mutect2) and cohort joint genotyping; long-read via minimap2 + Clair3 + Sniffles2",
+      "GIAB accuracy benchmarking (precision / recall / F1 split by SNP and INDEL)",
+      "Evidence-cited clinical report plus HL7 FHIR output",
+      "164 tests + CI; conda or Docker/Singularity, laptop to cloud",
     ],
     tech: ["Nextflow", "Python", "NGS", "Variant calling", "Docker", "LLM reporting"],
     links: [{ label: "GitHub", href: "https://github.com/mbote-droid/ngs-variant-pipeline" }],
-    status: "coming-soon",
+    status: "open-source",
   },
   {
     slug: "healthcare-ai-radar",
@@ -294,12 +313,12 @@ export const projects: Project[] = [
     highlights: [
       "Five-dimension scoring of voice-agent replies across four role-play domains",
       "Whisper / Gemini model comparison with physics-based audio quality metrics",
-      "FastAPI + React architecture, fully tested end to end",
+      "FastAPI + React architecture; 133 tests, CI/CD and Docker",
       "Offline-first with graceful degradation when cloud providers are unreachable",
     ],
     tech: ["FastAPI", "React", "Whisper", "Gemini", "Python", "pytest"],
     links: [{ label: "GitHub", href: "https://github.com/mbote-droid/Neurosonix" }],
-    status: "coming-soon",
+    status: "open-source",
   },
   {
     slug: "tp53-bioinformatics",
@@ -339,4 +358,23 @@ export const projects: Project[] = [
     links: [{ label: "GitHub", href: "https://github.com/mbote-droid/SurgiLogic-QA" }],
     status: "coming-soon",
   },
+];
+
+/** Degrees and certifications. Issuers are named so recruiters and AI search can verify them. */
+export const education: Credential[] = [
+  { name: "MBChB (Bachelor of Medicine and Bachelor of Surgery)", issuer: "Kampala International University" },
+  { name: "MCS (Membership of the College of Surgeons), General Surgery", issuer: "College of Surgeons of East, Central and Southern Africa (COSECSA)" },
+];
+
+export const certifications: Credential[] = [
+  { name: "AI Engineering Professional Certificate", issuer: "IBM", href: site.links.credly },
+  { name: "Full Stack Software Developer Professional Certificate", issuer: "IBM", href: site.links.credly },
+  { name: "Bioinformatics", issuer: "Technical University of Denmark (DTU), Coursera" },
+  { name: "Bioinformatics", issuer: "UC San Diego, Coursera" },
+  { name: "Computational Neuroscience", issuer: "University of Washington, Coursera" },
+  { name: "Foundations of Healthcare Systems Engineering", issuer: "Johns Hopkins University, Coursera" },
+  { name: "Biomedical Imaging Fundamentals", issuer: "EPFL, Coursera" },
+  { name: "Annotate and Analyze Objects for Vision", issuer: "Coursera" },
+  { name: "AI Agents", issuer: "Microsoft" },
+  { name: "AI in Healthcare (Azure)", issuer: "Microsoft" },
 ];

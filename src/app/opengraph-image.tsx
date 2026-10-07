@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/data/content";
 
-export const alt = `${site.name} — Physician-Scientist & AI / Software Engineer`;
+export const alt = `${site.name} — Physician & AI / Software Engineer`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -56,11 +56,11 @@ export default function OpengraphImage() {
             {site.name}
           </div>
           <div style={{ fontSize: "37px", color: "#22d3ee", fontWeight: 600 }}>
-            Physician-Scientist · Full-Stack SWE · IBM AI Engineer
+            Physician · IBM-Certified AI Engineer · Full-Stack SWE
           </div>
           <div style={{ fontSize: "29px", color: "#a9b6cc", maxWidth: "1000px" }}>
             Data science, annotation &amp; biomedical research — turning biomedical
-            data into trustworthy, clinical-grade AI, end to end.
+            data into trustworthy, tested AI, end to end.
           </div>
         </div>
 
