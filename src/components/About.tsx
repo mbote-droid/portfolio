@@ -52,7 +52,7 @@ export function About() {
                 <span aria-hidden className="text-accent">
                   ▸
                 </span>
-                1,000+ automated tests across five open-source projects
+                1,200+ automated tests across seven open-source projects
               </li>
             </ul>
           </aside>

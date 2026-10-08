@@ -54,7 +54,7 @@ export const site = {
 
   bio: [
     "I'm a physician and general surgery registrar (MBChB; MCS, COSECSA), an IBM-certified AI engineer and an IBM-certified full-stack software engineer — a rare combination of frontline clinical judgement, biomedical research training and the engineering depth to ship production systems end to end. I work fluently across the whole pipeline: framing the research question, designing the study, wrangling and annotating the data, modelling it, and delivering it as a tested, deployable product.",
-    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (1,000+ automated tests across five open-source projects) — so the results hold up to clinical and scientific scrutiny.",
+    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (1,200+ automated tests across seven open-source projects) — so the results hold up to clinical and scientific scrutiny.",
   ],
 
   links: {
@@ -73,8 +73,8 @@ export const site = {
 /** Headline impact metrics — shown above the fold so strengths are visible immediately. */
 export const stats: Stat[] = [
   { value: "3-in-1", label: "Clinician · Researcher · Engineer" },
-  { value: "5", label: "Tested open-source projects" },
-  { value: "1,000+", label: "Automated tests written" },
+  { value: "7", label: "Tested open-source projects" },
+  { value: "1,200+", label: "Automated tests written" },
   { value: "7/7", label: "TP53 pathogenic hotspots correct vs ClinVar/IARC" },
 ];
 
@@ -178,6 +178,8 @@ export const skills: SkillGroup[] = [
       "Clinical & molecular biology",
       "Ground-truth benchmarking",
       "Scientific writing",
+      "Clinical data management",
+      "Drug safety & pharmacovigilance analytics",
     ],
   },
   {
@@ -211,6 +213,8 @@ export const skills: SkillGroup[] = [
       "AlphaFold & ESM-2",
       "AutoDock Vina",
       "HL7 FHIR R4",
+      "CDISC SDTM & ADaM",
+      "SAS XPT · define metadata",
     ],
   },
   {
@@ -367,6 +371,38 @@ export const projects: Project[] = [
       { label: "GitHub", href: "https://github.com/mbote-droid/tp53_analysis" },
     ],
     status: "live",
+  },
+  {
+    slug: "cdisc-safety-dashboard",
+    title: "CDISC Clinical Trial Safety Dashboard",
+    tagline: "Raw EDC data to SDTM, ADaM and regulatory-style safety tables, with a fault-tolerant pipeline and live dashboard",
+    description:
+      "An end-to-end clinical data pipeline: messy EDC-style exports are cleaned and quarantined under 20+ data-quality rules, mapped to CDISC SDTM (DM, AE, LB) and ADaM (ADSL, ADAE, ADLB), checked against Pinnacle 21-style conformance rules, and summarised into the safety outputs a medical monitor or biostatistician reviews.",
+    highlights: [
+      "SDTM DM/AE/LB and ADaM ADSL/ADAE/ADLB: study days, baseline flags, treatment-emergent (30-day window) and first-occurrence flags",
+      "TEAE overview, SOC/PT incidence, risk differences vs placebo with Newcombe hybrid-score 95% CIs, lab shift tables",
+      "eDISH plot and potential Hy's law screen; SAS XPT v5 export with define-style metadata and a SHA-256 audit manifest",
+      "70 tests at 98% coverage; CI on Python 3.11-3.13, bandit, pip-audit, container health check; Docker image on GHCR",
+    ],
+    tech: ["Python", "pandas", "CDISC SDTM/ADaM", "SAS XPT", "Streamlit", "Altair", "Docker"],
+    links: [{ label: "GitHub", href: "https://github.com/mbote-droid/CDISC-SAFETY-DASHBOARD" }],
+    status: "open-source",
+  },
+  {
+    slug: "bioevidence-forge",
+    title: "BioEvidence Forge",
+    tagline: "Self-hosted biomedical evidence monitor: PubMed to a traceable archive and citation-complete evidence briefs",
+    description:
+      "A service that continuously collects PubMed literature for configured research topics, stores every record with full provenance in a local SQLite archive, scores relevance transparently and writes Markdown evidence briefs for human review. Built to respect public API policies and fail safely.",
+    highlights: [
+      "Rate-paced PubMed E-utilities client with bounded retries, exponential backoff and Retry-After handling",
+      "Hardened parsing (defusedxml) and validated records keeping PMID, DOI, PMC ID, source URL and retrieval time",
+      "SQLite archive in WAL mode with automatic schema migration; FastAPI review service and scheduled collector",
+      "146 tests with a 95% coverage gate; unprivileged, read-only container; CI on Python 3.11-3.13",
+    ],
+    tech: ["Python", "FastAPI", "SQLite", "httpx", "Pydantic", "Docker"],
+    links: [{ label: "GitHub", href: "https://github.com/mbote-droid/BioEvidence-Forge" }],
+    status: "open-source",
   },
   {
     slug: "surgilogic-qa",
