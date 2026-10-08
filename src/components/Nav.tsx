@@ -4,6 +4,7 @@ import { site } from "@/data/content";
 const links = [
   { label: "About", href: "/#about" },
   { label: "Data & Research", href: "/#focus" },
+  { label: "Science", href: "/#science" },
   { label: "Skills", href: "/#skills" },
   { label: "Projects", href: "/#projects" },
   { label: "Credentials", href: "/#credentials" },

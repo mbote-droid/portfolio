@@ -10,6 +10,17 @@
 - [Healthcare AI Radar](https://github.com/mbote-droid/healthcare-ai-radar): healthcare-AI literature intelligence with a transparent 0-100 Scoop Score and a five-layer anti-hallucination guardrail; 90 tests.
 - [TP53 Bioinformatics Pipeline](https://github.com/mbote-droid/tp53_analysis): sequence retrieval, ORF discovery, phylogenetics, InterPro domain annotation and a cancer-mutation heatmap; 63 tests.
 
+## Science and methods
+
+- Computational neuroscience: Hodgkin–Huxley and integrate-and-fire models, phase-plane analysis, Poisson spike statistics, spike-triggered average and LNP encoding models, Bayesian decoding, entropy and mutual information, Hebbian/STDP plasticity, TD reinforcement learning.
+- Biomedical imaging and medical physics: MRI k-space and 2D FFT reconstruction, Bloch equations (T1/T2), CT via the Radon transform and filtered back-projection, Beer–Lambert attenuation, ultrasound and nuclear imaging physics, PSF/MTF/SNR.
+- Signal processing: FFT/inverse FFT, Welch PSD, convolution theorem, Butterworth/SOS filters, wavelets, Laplace and z-transforms, ECG and HRV analysis.
+- Scientific computing: ODE solvers (RK45, BDF, LSODA), Crank–Nicolson finite differences, sparse finite elements, nonlinear least squares, constrained optimisation, convergence and stability analysis (MMS, Richardson, von Neumann/CFL).
+- Statistical programming: maximum likelihood and Bayesian inference, GLMs, survival analysis, bootstrap intervals, FDR control, Monte Carlo, Markov chains and HMMs, identifiability and Sobol sensitivity.
+- Spatial data analysis: Moran's I, kernel density estimation, IDW and kriging, point-pattern analysis, Laplacian/gradient operators, disease mapping.
+- Systems engineering: EARS requirements, V-model and traceability, FMEA and ISO 14971-style risk analysis, ADRs and ICDs, state-space and PID control, Kalman filtering, queueing and system dynamics.
+- Bioinformatics algorithms: dynamic-programming alignment, de Bruijn graph assembly, BWT/FM-index, profile HMMs and PSSMs, phylogenetics, AlphaFold and ESM-2.
+
 ## Skills
 
 Python, TypeScript, SQL, Bash; Nextflow, Snakemake, BioPython, variant calling, GIAB benchmarking; LLM applications, RAG, multi-agent systems, AI evaluation, Keras; FastAPI, Django, Node.js, React, Next.js; Docker, Kubernetes, GitHub Actions, Google Cloud, IBM Cloud; MATLAB/Octave; data annotation (audio, medical image, clinical text); study design, biostatistics, evidence synthesis, scientific writing.

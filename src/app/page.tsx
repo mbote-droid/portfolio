@@ -2,6 +2,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Focus } from "@/components/Focus";
+import { Methods } from "@/components/Methods";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Credentials } from "@/components/Credentials";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <About />
         <Focus />
+        <Methods />
         <Skills />
         <Projects />
         <Credentials />

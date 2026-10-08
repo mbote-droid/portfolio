@@ -46,11 +46,11 @@ export const site = {
 
   // Short, keyword-dense summary for meta description + social cards.
   metaDescription:
-    "Dr. Samuel Mbote: physician (MBChB, MCS COSECSA), IBM-certified AI engineer and full-stack software engineer. Bioinformatics and NGS pipelines (Nextflow, Snakemake), clinical genomics and variant interpretation, LLM and AI-agent evaluation, data science and multi-domain data annotation (audio, image, clinical text), biomedical research and scientific writing.",
+    "Dr. Samuel Mbote: physician (MBChB, MCS COSECSA), IBM-certified AI engineer and full-stack software engineer. Bioinformatics and NGS pipelines (Nextflow, Snakemake), computational neuroscience, biomedical imaging and medical physics, scientific computing, signal processing, statistical programming, systems engineering, clinical genomics and variant interpretation, LLM and AI-agent evaluation, data science and multi-domain data annotation (audio, image, clinical text), biomedical research and scientific writing.",
 
   email: "mbotesamuel9@gmail.com",
   availability:
-    "Open to roles in bioinformatics, AI evaluation, data science & annotation, biomedical research, scientific writing, health-tech & applied AI",
+    "Open to roles in bioinformatics, computational biology & neuroscience, scientific computing, AI evaluation, data science & annotation, biomedical research, scientific writing, health-tech & applied AI",
 
   bio: [
     "I'm a physician and general surgery registrar (MBChB; MCS, COSECSA), an IBM-certified AI engineer and an IBM-certified full-stack software engineer — a rare combination of frontline clinical judgement, biomedical research training and the engineering depth to ship production systems end to end. I work fluently across the whole pipeline: framing the research question, designing the study, wrangling and annotating the data, modelling it, and delivering it as a tested, deployable product.",
@@ -236,6 +236,31 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
+    label: "Mathematics & physics",
+    items: [
+      "Linear algebra & vector spaces",
+      "Fourier analysis (FFT · iFFT)",
+      "Laplace & z-transforms",
+      "ODEs & PDEs",
+      "Probability & Bayesian inference",
+      "Information theory",
+      "Numerical analysis",
+      "Optimisation",
+      "Electromagnetism & medical physics",
+    ],
+  },
+  {
+    label: "Systems & scientific engineering",
+    items: [
+      "Requirements & V-model",
+      "FMEA & risk analysis",
+      "Control theory (PID · state-space)",
+      "Kalman filtering",
+      "Verification & validation",
+      "Reproducible workflows",
+    ],
+  },
+  {
     label: "Currently building & learning",
     learning: true,
     items: ["Rust", "AWS", "Azure"],
@@ -377,4 +402,143 @@ export const certifications: Credential[] = [
   { name: "Annotate and Analyze Objects for Vision", issuer: "Coursera" },
   { name: "AI Agents", issuer: "Microsoft" },
   { name: "AI in Healthcare (Azure)", issuer: "Microsoft" },
+];
+
+export type Method = { title: string; blurb: string; equation: string; tags: string[] };
+
+/**
+ * "Science & Methods": the mathematical and physical toolkit behind the projects.
+ * Written in the voice of each discipline, with one signature equation per card.
+ */
+export const methods: Method[] = [
+  {
+    title: "Computational Neuroscience",
+    blurb:
+      "I treat neurons as dynamical systems and spike trains as point processes. I integrate Hodgkin–Huxley conductance models and leaky integrate-and-fire neurons numerically, read their behaviour off phase planes and bifurcations, and model spike counts as Poisson processes. For neural coding I fit spike-triggered averages and linear–nonlinear–Poisson encoders, decode stimuli with Bayesian estimators, and measure what a neuron tells us about the world with entropy and mutual information. Network dynamics, Hebbian and STDP plasticity, and temporal-difference reinforcement learning complete the picture.",
+    equation: "C dV/dt = −ḡNa m³h (V − ENa) − ḡK n⁴ (V − EK) − gL (V − EL) + I(t)",
+    tags: [
+      "Hodgkin–Huxley & LIF models",
+      "Phase-plane analysis",
+      "Poisson spike statistics",
+      "STA & LNP encoding models",
+      "Bayesian decoding",
+      "Entropy & mutual information",
+      "Hebbian & STDP plasticity",
+      "TD reinforcement learning",
+      "MATLAB · Octave",
+    ],
+  },
+  {
+    title: "Biomedical Imaging & Medical Physics",
+    blurb:
+      "Imaging is applied physics written in linear algebra. In MRI I think in k-space: the scanner samples spatial frequencies, and a 2D inverse FFT returns the image, so aliasing, field of view, Nyquist sampling and partial-Fourier acquisition all follow from the maths. In CT the sinogram is the Radon transform of tissue attenuation, and filtered back-projection (ramp filter, then back-project) inverts it. I reason from Beer–Lambert attenuation, Bloch-equation T1/T2 relaxation and the point-spread function to explain contrast, resolution and noise before I segment and quantify anything.",
+    equation: "s(k) = ∬ m(r) e^(−i2π k·r) dr   ⇒   m(r) = F⁻¹{ s(k) }",
+    tags: [
+      "k-space & 2D FFT reconstruction",
+      "Radon transform & filtered back-projection",
+      "Bloch equations (T1 · T2)",
+      "Beer–Lambert X-ray attenuation",
+      "Ultrasound & nuclear imaging physics",
+      "PSF · MTF · SNR",
+      "Image segmentation & quantification",
+      "Medical image annotation",
+    ],
+  },
+  {
+    title: "Signal Processing",
+    blurb:
+      "I move between the time, frequency and complex-frequency domains as the problem demands. FFT and inverse FFT for spectral analysis and frequency-domain filtering, Welch power spectral density, the convolution theorem, zero-phase IIR filter cascades in second-order sections for physiological signals such as ECG, and wavelets when a signal refuses to be stationary. Laplace and z-transforms let me write the transfer function, place the poles and zeros, and know whether a system is stable before I simulate a single sample.",
+    equation: "H(s) = Y(s) / X(s),   stable ⇔ Re(pᵢ) < 0 ∀ poles pᵢ",
+    tags: [
+      "FFT · inverse FFT",
+      "Welch PSD",
+      "Convolution theorem",
+      "Butterworth / SOS filtering",
+      "Wavelet transforms",
+      "Laplace & z-transforms",
+      "Nyquist–Shannon sampling",
+      "ECG · R-peak · HRV analysis",
+    ],
+  },
+  {
+    title: "Scientific Computing & Numerical Methods",
+    blurb:
+      "I write simulation code that is verified against the physics, not just run. Explicit and stiff ODE integrators (RK45, BDF, LSODA) for pharmacokinetic and glucose–insulin models; finite differences with Crank–Nicolson and the Thomas algorithm, and small sparse finite-element solvers, for PDEs such as the Pennes bioheat equation; Levenberg–Marquardt and SLSQP for fitting and constrained optimisation. Every solver earns trust the same way: method of manufactured solutions, observed convergence order, Richardson extrapolation, von Neumann and CFL stability, and unit-checked quantities throughout.",
+    equation: "ρc ∂T/∂t = ∇·(k∇T) + ωb ρb cb (Ta − T) + Qmet + Qext",
+    tags: [
+      "ODE solvers (RK45 · BDF · LSODA)",
+      "Finite differences · Crank–Nicolson",
+      "Finite elements (sparse CSR)",
+      "Nonlinear least squares",
+      "Constrained optimisation",
+      "Convergence & stability analysis",
+      "Linear algebra & eigen-analysis",
+      "NumPy · SciPy",
+      "GPU compute (CUDA · ROCm)",
+    ],
+  },
+  {
+    title: "Statistical Programming & Probabilistic Modelling",
+    blurb:
+      "Statistics is how I decide what a result is worth. I write reproducible analyses in Python and SQL: maximum-likelihood and Bayesian estimation, generalised linear models and logistic regression, survival analysis for clinical outcomes, bootstrap and Wilson intervals instead of bare point estimates, and false-discovery-rate control when many hypotheses are tested at once. Monte Carlo simulation propagates uncertainty; Markov chains and hidden Markov models describe sequences; Fisher information and Sobol indices tell me which parameters the data can actually identify.",
+    equation: "p(θ | x) = p(x | θ) p(θ) / ∫ p(x | θ′) p(θ′) dθ′",
+    tags: [
+      "Maximum likelihood & Bayesian inference",
+      "GLMs · logistic regression",
+      "Survival analysis",
+      "Bootstrap & interval estimation",
+      "Hypothesis testing & FDR",
+      "Monte Carlo simulation",
+      "Markov chains & HMMs",
+      "Identifiability & sensitivity analysis",
+      "pandas · statsmodels · SciPy · scikit-learn",
+    ],
+  },
+  {
+    title: "Spatial Data Analysis & Mapping",
+    blurb:
+      "Medicine is spatial, from a tumour margin on a scan to a disease cluster on a map. I treat images and geographic data alike as fields over space: spatial autocorrelation with Moran's I, kernel density estimation and interpolation (inverse distance weighting, kriging) for disease mapping, and point-pattern analysis for clustering. On image fields I use gradient and Laplacian operators, convolution kernels and Fourier-domain filtering for edges and texture. Coordinate reference systems and choropleth maps turn the result into something a clinician or a health ministry can act on.",
+    equation: "∇²f = ∂²f/∂x² + ∂²f/∂y²,   I = (N/W) Σᵢⱼ wᵢⱼ zᵢ zⱼ / Σᵢ zᵢ²",
+    tags: [
+      "Spatial autocorrelation (Moran's I)",
+      "Kernel density estimation",
+      "IDW & kriging interpolation",
+      "Point-pattern analysis",
+      "Laplacian & gradient operators",
+      "Coordinate reference systems",
+      "Choropleth & epidemiological mapping",
+    ],
+  },
+  {
+    title: "Systems Engineering",
+    blurb:
+      "I build health technology the way safety-critical systems are built. Requirements are written in EARS “shall” form with IDs and a traceability matrix; the V-model gives every requirement a verification method; FMEA and ISO 14971-style hazard analysis come before code; interface control documents and architecture decision records keep the design honest. Control theory sits underneath: state-space models, PID loops, Kalman state estimation and stability margins. At the organisational scale I model care as queues, flows and feedback loops (Foundations of Healthcare Systems Engineering, Johns Hopkins).",
+    equation: "ẋ = Ax + Bu,   y = Cx + Du,   x̂ₖ = x̂ₖ⁻ + Kₖ (yₖ − H x̂ₖ⁻)",
+    tags: [
+      "Requirements engineering (EARS)",
+      "V-model & traceability",
+      "FMEA & risk analysis",
+      "ADRs · ICDs · C4 / UML",
+      "State-space & PID control",
+      "Kalman filtering",
+      "Queueing & process modelling",
+      "System dynamics · causal-loop diagrams",
+    ],
+  },
+  {
+    title: "Computational Biology & Bioinformatics Algorithms",
+    blurb:
+      "Underneath every bioinformatics tool is an algorithm I can reason about. Dynamic programming for Needleman–Wunsch and Smith–Waterman alignment; de Bruijn graphs and Eulerian paths for genome assembly; the Burrows–Wheeler transform and FM-index behind fast read mapping; profile HMMs and position-specific scoring matrices for motifs and protein families; distance and likelihood methods for phylogenetics; and protein-structure reasoning with AlphaFold and ESM-2. At scale I run them as Nextflow and Snakemake workflows, with variant calls benchmarked against GIAB truth sets.",
+    equation: "F(i,j) = max{ F(i−1,j−1) + s(xᵢ,yⱼ),  F(i−1,j) − d,  F(i,j−1) − d }",
+    tags: [
+      "Dynamic-programming alignment",
+      "de Bruijn graph assembly",
+      "BWT & FM-index",
+      "Profile HMMs & PSSMs",
+      "Phylogenetics (NJ · ML)",
+      "Protein structure (AlphaFold · ESM-2)",
+      "Variant calling & GIAB benchmarking",
+      "Nextflow · Snakemake",
+    ],
+  },
 ];
