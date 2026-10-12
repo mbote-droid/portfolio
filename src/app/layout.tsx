@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { site, projects, education, certifications } from "@/data/content";
+import { site, projects, education, certifications, publications } from "@/data/content";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -220,11 +220,22 @@ function PersonJsonLd() {
     license: "https://opensource.org/licenses/MIT",
     author: { "@type": "Person", name: site.fullName, url: site.links.url },
   }));
+  const papers = publications.map((pub) => ({
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    headline: pub.title,
+    name: pub.title,
+    datePublished: String(pub.year),
+    publisher: { "@type": "Organization", name: "Zenodo" },
+    identifier: `https://doi.org/${pub.doi}`,
+    url: `https://doi.org/${pub.doi}`,
+    author: { "@type": "Person", name: site.fullName, url: site.links.url },
+  }));
   return (
     <script
       type="application/ld+json"
       // JSON.stringify output is safe: no user input, all first-party constants.
-      dangerouslySetInnerHTML={{ __html: JSON.stringify([json, ...code]) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify([json, ...code, ...papers]) }}
     />
   );
 }

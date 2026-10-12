@@ -13,6 +13,10 @@
 - [Healthcare AI Radar](https://github.com/mbote-droid/healthcare-ai-radar): healthcare-AI literature intelligence with a transparent 0-100 Scoop Score and a five-layer anti-hallucination guardrail; 90 tests.
 - [TP53 Bioinformatics Pipeline](https://github.com/mbote-droid/tp53_analysis): sequence retrieval, ORF discovery, phylogenetics, InterPro domain annotation and a cancer-mutation heatmap; 63 tests.
 
+## Publications
+
+- Mbote S. Validating the graders: physics-aware rewards for AI agents on biomedical engineering tasks. Preprint, Zenodo, 2026. https://doi.org/10.5281/zenodo.23309911
+
 ## Science and methods
 
 - Computational neuroscience: Hodgkin–Huxley and integrate-and-fire models, phase-plane analysis, Poisson spike statistics, spike-triggered average and LNP encoding models, Bayesian decoding, entropy and mutual information, Hebbian/STDP plasticity, TD reinforcement learning.

@@ -313,6 +313,7 @@ export const projects: Project[] = [
     tech: ["Python", "NumPy/SciPy", "CuPy/CUDA", "GNU Octave", "Julia", "Snakemake", "Docker", "Harbor"],
     links: [
       { label: "GitHub", href: "https://github.com/mbote-droid/bioeng-termbench", kind: "primary" },
+      { label: "Preprint", href: "https://doi.org/10.5281/zenodo.23309911" },
       { label: "DOI", href: "https://doi.org/10.5281/zenodo.23308638" },
     ],
     status: "open-source",
@@ -458,6 +459,17 @@ export const certifications: Credential[] = [
   { name: "Annotate and Analyze Objects for Vision", issuer: "Coursera" },
   { name: "AI Agents", issuer: "Microsoft" },
   { name: "AI in Healthcare (Azure)", issuer: "Microsoft" },
+];
+
+/** Papers and preprints. Each carries a DOI so recruiters and AI search can verify it. */
+export type Publication = { title: string; venue: string; year: number; doi: string };
+export const publications: Publication[] = [
+  {
+    title: "Validating the graders: physics-aware rewards for AI agents on biomedical engineering tasks",
+    venue: "Preprint, Zenodo",
+    year: 2026,
+    doi: "10.5281/zenodo.23309911",
+  },
 ];
 
 export type Method = { title: string; blurb: string; equation: string; tags: string[] };

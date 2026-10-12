@@ -1,4 +1,4 @@
-import { certifications, education, type Credential } from "@/data/content";
+import { certifications, education, publications, type Credential } from "@/data/content";
 
 function CredentialList({ items }: { items: Credential[] }) {
   return (
@@ -29,8 +29,28 @@ export function Credentials() {
     <section id="credentials" className="border-t border-border scroll-mt-16">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="font-mono text-sm uppercase tracking-widest text-accent">
-          Education &amp; certifications
+          Publications, education &amp; certifications
         </h2>
+        <div className="mt-8 rounded-2xl border border-border bg-card p-6">
+          <h3 className="text-sm font-semibold tracking-tight">Publications</h3>
+          <ul className="mt-4 space-y-3">
+            {publications.map((pub) => (
+              <li key={pub.doi} className="flex flex-wrap items-baseline gap-x-2">
+                <a
+                  href={`https://doi.org/${pub.doi}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium hover:text-accent"
+                >
+                  {pub.title}
+                </a>
+                <span className="text-sm text-muted">
+                  {pub.venue}, {pub.year} · doi:{pub.doi}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card p-6">
             <h3 className="text-sm font-semibold tracking-tight">Medical degrees</h3>
