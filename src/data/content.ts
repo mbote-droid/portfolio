@@ -54,7 +54,7 @@ export const site = {
 
   bio: [
     "I'm a physician and general surgery registrar (MBChB; MCS, COSECSA), an IBM-certified AI engineer and an IBM-certified full-stack software engineer — a rare combination of frontline clinical judgement, biomedical research training and the engineering depth to ship production systems end to end. I work fluently across the whole pipeline: framing the research question, designing the study, wrangling and annotating the data, modelling it, and delivering it as a tested, deployable product.",
-    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (1,200+ automated tests across seven open-source projects) — so the results hold up to clinical and scientific scrutiny.",
+    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (1,500+ automated tests across eight open-source projects) — so the results hold up to clinical and scientific scrutiny.",
   ],
 
   links: {
@@ -73,8 +73,8 @@ export const site = {
 /** Headline impact metrics — shown above the fold so strengths are visible immediately. */
 export const stats: Stat[] = [
   { value: "3-in-1", label: "Clinician · Researcher · Engineer" },
-  { value: "7", label: "Tested open-source projects" },
-  { value: "1,200+", label: "Automated tests written" },
+  { value: "8", label: "Tested open-source projects" },
+  { value: "1,500+", label: "Automated tests written" },
   { value: "7/7", label: "TP53 pathogenic hotspots correct vs ClinVar/IARC" },
 ];
 
@@ -296,6 +296,26 @@ export const projects: Project[] = [
     ],
     flagship: true,
     status: "live",
+  },
+  {
+    slug: "bioeng-termbench",
+    title: "BioEng-TermBench",
+    tagline:
+      "Biomedical engineering tasks with physics-aware graders for training and evaluating AI agents, with the graders validated like instruments",
+    description:
+      "Five terminal tasks in the Harbor format: ECG denoising and HRV, two-compartment pharmacokinetic fitting and dosing, a closed-loop insulin controller tested in the loop, a verified Pennes bioheat solver for thermal ablation planning, and debugging a PK package. Each grader checks engineering correctness (units, conservation, order of accuracy, safety at the true parameters, robustness under uncertainty), not just that the script ran, and is itself validated by mutation testing, independent references in Python, Octave and Julia, and a red team against the sandbox.",
+    highlights: [
+      "Grader validation: Wilson / rule-of-three false-reject bounds, realistic wrong solutions as negative controls, grader mutation testing, 7 red-team attacks on the sandbox",
+      "Models: McSharry dynamical ECG, two-compartment PK with likelihood-ratio regions, Bergman glucose-insulin with PID and exercise, Pennes bioheat with Arrhenius damage",
+      "Numerics: Crank-Nicolson finite volumes and hand-written finite elements, manufactured solutions and measured order 2.0; GPU benchmark with a fused CUDA kernel (112x vs NumPy in float64, 231x in float32 on a T4)",
+      "289 tests; Snakemake validation campaign with SHA-256 provenance; byte-identical verdicts checked in CI; uv-locked, hash-pinned Docker images",
+    ],
+    tech: ["Python", "NumPy/SciPy", "CuPy/CUDA", "GNU Octave", "Julia", "Snakemake", "Docker", "Harbor"],
+    links: [
+      { label: "GitHub", href: "https://github.com/mbote-droid/bioeng-termbench", kind: "primary" },
+      { label: "DOI", href: "https://doi.org/10.5281/zenodo.23308638" },
+    ],
+    status: "open-source",
   },
   {
     slug: "ngs-variant-pipeline",

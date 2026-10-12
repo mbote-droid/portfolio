@@ -4,6 +4,7 @@
 
 ## Projects (all MIT-licensed, on GitHub)
 
+- [BioEng-TermBench](https://github.com/mbote-droid/bioeng-termbench) (DOI 10.5281/zenodo.23308638): five biomedical engineering terminal tasks for training and evaluating AI agents (ECG/HRV, two-compartment PK fitting and dosing, closed-loop insulin control with Kalman filtering, Pennes bioheat ablation planning with finite volumes and finite elements, PK debugging) with physics-aware graders validated by mutation testing, independent Python/Octave/Julia references and a sandbox red team; GPU benchmark with a fused CUDA kernel (112x float64, 231x float32 vs NumPy on a T4); Snakemake provenance; 289 tests.
 - [NGS Variant Pipeline](https://github.com/mbote-droid/ngs-variant-pipeline): Nextflow pipeline from raw reads to an evidence-cited clinical variant report. Germline, somatic (Mutect2), cohort joint genotyping and long-read (minimap2, Clair3, Sniffles2); GIAB accuracy benchmarking; HL7 FHIR output; 164 tests.
 - [Precision Onco Africa](https://github.com/mbote-droid/precision-onco-africa): offline-capable multi-agent LLM platform for TP53 variant interpretation. 26 specialist agents including a 6-agent tumour board, an AI reasoning-audit layer (hallucination, citation quality), ClinVar/IARC benchmark (7/7 known pathogenic hotspots correct), runs on 8 GB RAM; 566 tests.
 - [NeuroSonix](https://github.com/mbote-droid/Neurosonix): audio annotation and multi-agent evaluation of voice-agent conversations across five quality dimensions; FastAPI + React; 133 tests.
