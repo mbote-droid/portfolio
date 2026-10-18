@@ -17,7 +17,7 @@ export function Methods() {
           {methods.map((m) => (
             <article
               key={m.title}
-              className="flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent/50"
+              className="flex min-w-0 flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent/50"
             >
               <h3 className="text-lg font-semibold tracking-tight">{m.title}</h3>
               <p
