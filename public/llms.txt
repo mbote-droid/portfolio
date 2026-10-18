@@ -17,7 +17,7 @@
 ## Publications
 
 - Mbote S. Validating the graders: physics-aware rewards for AI agents on biomedical engineering tasks. Preprint, Zenodo, 2026. https://doi.org/10.5281/zenodo.23309911
-- Mbote S. Validation-first EEG pipelines: how synthetic benchmarks mislead, and how pre-registration catches it. Preprint, Zenodo, 2026. https://doi.org/10.5281/zenodo.23448015
+- Mbote S. Validation-first EEG pipelines: how synthetic benchmarks mislead, and how pre-registration catches it. Preprint, Zenodo, 2026. https://doi.org/10.5281/zenodo.23448016
 
 ## Science and methods
 

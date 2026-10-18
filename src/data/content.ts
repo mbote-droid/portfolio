@@ -312,7 +312,7 @@ export const projects: Project[] = [
     tech: ["Python", "MNE", "SciPy", "NumPy", "Claude API", "HTML reports"],
     links: [
       { label: "GitHub", href: "https://github.com/mbote-droid/Neuro-signal", kind: "primary" },
-      { label: "Preprint", href: "https://doi.org/10.5281/zenodo.23448015" },
+      { label: "Preprint", href: "https://doi.org/10.5281/zenodo.23448016" },
       { label: "DOI", href: "https://doi.org/10.5281/zenodo.23447346" },
     ],
     status: "open-source",
@@ -488,7 +488,7 @@ export const publications: Publication[] = [
     title: "Validation-first EEG pipelines: how synthetic benchmarks mislead, and how pre-registration catches it",
     venue: "Preprint, Zenodo",
     year: 2026,
-    doi: "10.5281/zenodo.23448015",
+    doi: "10.5281/zenodo.23448016",
   },
   {
     title: "Validating the graders: physics-aware rewards for AI agents on biomedical engineering tasks",
