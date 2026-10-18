@@ -54,7 +54,7 @@ export const site = {
 
   bio: [
     "I'm a physician and general surgery registrar (MBChB; MCS, COSECSA), an IBM-certified AI engineer and an IBM-certified full-stack software engineer — a rare combination of frontline clinical judgement, biomedical research training and the engineering depth to ship production systems end to end. I work fluently across the whole pipeline: framing the research question, designing the study, wrangling and annotating the data, modelling it, and delivering it as a tested, deployable product.",
-    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (1,500+ automated tests across eight open-source projects) — so the results hold up to clinical and scientific scrutiny.",
+    "That range is my edge. I bring native command of clinical and molecular biology to data problems most engineers can't read, and I bring rigorous software engineering to research that most clinicians can't build. My work makes AI's scientific reasoning verifiable — hallucination guardrails, ground-truth benchmarks against ClinVar and IARC, and rigorously tested, offline-first pipelines (1,600+ automated tests across nine open-source projects) — so the results hold up to clinical and scientific scrutiny.",
   ],
 
   links: {
@@ -65,7 +65,7 @@ export const site = {
     cv: "/cv.pdf",
     credly: "https://www.credly.com/users/samuel-m.1cfdf6c1",
     scholar: "https://scholar.google.com/citations?user=3iiXDTYAAAAJ",
-    kolabtree: "",
+    kolabtree: "https://www.kolabtree.com/find-an-expert/s.132104",
     url: "https://portfolio-sam-mbote.vercel.app",
   },
 };
@@ -73,8 +73,8 @@ export const site = {
 /** Headline impact metrics — shown above the fold so strengths are visible immediately. */
 export const stats: Stat[] = [
   { value: "3-in-1", label: "Clinician · Researcher · Engineer" },
-  { value: "8", label: "Tested open-source projects" },
-  { value: "1,500+", label: "Automated tests written" },
+  { value: "9", label: "Tested open-source projects" },
+  { value: "1,600+", label: "Automated tests written" },
   { value: "7/7", label: "TP53 pathogenic hotspots correct vs ClinVar/IARC" },
 ];
 
@@ -298,6 +298,26 @@ export const projects: Project[] = [
     status: "live",
   },
   {
+    slug: "neurosignal",
+    title: "NeuroSignal",
+    tagline: "Drop in an EEG recording, get a validated report whose every number is traced to a computed value",
+    description:
+      "A validation-first EEG pipeline: channel quality, a spectrum split into aperiodic (1/f) and oscillatory parts, phase coupling that ignores volume conduction, candidate seizure-like events, and a plain-language explanation that is mechanically checked against the computed metrics. Every method was tested on synthetic data with known answers, and the hypotheses were pre-registered before the code existed.",
+    highlights: [
+      "Aperiodic exponent within 0.014 median error on 200 synthetic spectra; agrees with specparam in 200/200",
+      "Debiased wPLI connectivity: PLV reported coupling in 92% of uncoupled pairs, dwPLI stays near zero",
+      "Claim checker caught 2,152/2,152 corrupted explanations; interactive HTML report with hoverable citation chips",
+      "Pre-registered hypotheses, held-out CHB-MIT test committed before download, failures reported; 107 tests",
+    ],
+    tech: ["Python", "MNE", "SciPy", "NumPy", "Claude API", "HTML reports"],
+    links: [
+      { label: "GitHub", href: "https://github.com/mbote-droid/Neuro-signal", kind: "primary" },
+      { label: "Preprint", href: "https://doi.org/10.5281/zenodo.23448015" },
+      { label: "DOI", href: "https://doi.org/10.5281/zenodo.23447346" },
+    ],
+    status: "open-source",
+  },
+  {
     slug: "bioeng-termbench",
     title: "BioEng-TermBench",
     tagline:
@@ -464,6 +484,12 @@ export const certifications: Credential[] = [
 /** Papers and preprints. Each carries a DOI so recruiters and AI search can verify it. */
 export type Publication = { title: string; venue: string; year: number; doi: string };
 export const publications: Publication[] = [
+  {
+    title: "Validation-first EEG pipelines: how synthetic benchmarks mislead, and how pre-registration catches it",
+    venue: "Preprint, Zenodo",
+    year: 2026,
+    doi: "10.5281/zenodo.23448015",
+  },
   {
     title: "Validating the graders: physics-aware rewards for AI agents on biomedical engineering tasks",
     venue: "Preprint, Zenodo",
